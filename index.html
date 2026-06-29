@@ -7,53 +7,236 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Cynthia Jayne Amol</title>
 
-  <!--
-    - favicon
-  -->
   <link rel="shortcut icon" href="./logo.ico" type="image/x-icon">
-
-  <!--
-    - custom css link
-  -->
   <link rel="stylesheet" href="./style.css">
-
-  <!--
-    - google font link
-  -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    .pub-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .pub-item {
+      padding: 16px 0;
+      border-bottom: 1px solid var(--border-color, hsl(0, 0%, 22%));
+    }
+
+    .pub-item:last-child {
+      border-bottom: none;
+    }
+
+    .pub-title {
+      font-size: var(--fs-6, 0.875rem);
+      font-weight: 600;
+      color: var(--white-2, hsl(0, 0%, 84%));
+      margin-bottom: 4px;
+      line-height: 1.5;
+    }
+
+    .pub-meta {
+      font-size: var(--fs-7, 0.8125rem);
+      color: var(--light-gray, hsl(0, 0%, 70%));
+      line-height: 1.5;
+    }
+
+    .pub-venue {
+      color: var(--orange-yellow-crayola, hsl(45, 100%, 72%));
+      font-style: italic;
+    }
+
+    .pub-doi {
+      display: inline-block;
+      margin-top: 4px;
+      font-size: var(--fs-7, 0.8125rem);
+      color: var(--orange-yellow-crayola, hsl(45, 100%, 72%));
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .pub-doi:hover {
+      color: var(--white-2, hsl(0, 0%, 84%));
+      text-decoration: underline;
+    }
+
+    .award-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .award-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      padding: 12px 0;
+      border-bottom: 1px solid var(--border-color, hsl(0, 0%, 22%));
+    }
+
+    .award-item:last-child {
+      border-bottom: none;
+    }
+
+    .award-year {
+      min-width: 48px;
+      font-size: var(--fs-7, 0.8125rem);
+      font-weight: 600;
+      color: var(--orange-yellow-crayola, hsl(45, 100%, 72%));
+      padding-top: 2px;
+    }
+
+    .award-text {
+      font-size: var(--fs-6, 0.875rem);
+      color: var(--light-gray, hsl(0, 0%, 70%));
+      line-height: 1.5;
+    }
+
+    .award-text strong {
+      color: var(--white-2, hsl(0, 0%, 84%));
+    }
+
+    .service-item-badge {
+      display: inline-block;
+      font-size: 0.7rem;
+      font-weight: 600;
+      background: hsla(45, 100%, 72%, 0.12);
+      color: var(--orange-yellow-crayola, hsl(45, 100%, 72%));
+      border: 1px solid hsla(45, 100%, 72%, 0.25);
+      border-radius: 4px;
+      padding: 2px 7px;
+      margin-top: 6px;
+      letter-spacing: 0.03em;
+    }
+
+    .lang-pills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 8px;
+    }
+
+    .lang-pill {
+      font-size: 0.75rem;
+      font-weight: 500;
+      background: hsl(0, 0%, 17%);
+      color: var(--light-gray, hsl(0, 0%, 70%));
+      border: 1px solid hsl(0, 0%, 22%);
+      border-radius: 20px;
+      padding: 3px 12px;
+    }
+
+    .section-sub {
+      font-size: var(--fs-6, 0.875rem);
+      color: var(--light-gray-70, hsl(0, 0%, 70%));
+      margin: 0 0 20px 0;
+      line-height: 1.7;
+    }
+
+    /* ── News & Events ── */
+    .news-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .news-item {
+      display: grid;
+      grid-template-columns: 90px 1fr;
+      gap: 0 16px;
+      padding: 16px 0;
+      border-bottom: 1px solid var(--border-color, hsl(0, 0%, 22%));
+      align-items: start;
+    }
+
+    .news-item:last-child {
+      border-bottom: none;
+    }
+
+    .news-date {
+      font-size: 0.72rem;
+      font-weight: 600;
+      color: var(--orange-yellow-crayola, hsl(45, 100%, 72%));
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      line-height: 1.6;
+      padding-top: 2px;
+    }
+
+    .news-body {}
+
+    .news-title {
+      font-size: var(--fs-6, 0.875rem);
+      font-weight: 600;
+      color: var(--white-2, hsl(0, 0%, 84%));
+      margin: 0 0 4px 0;
+      line-height: 1.45;
+    }
+
+    .news-desc {
+      font-size: var(--fs-7, 0.8125rem);
+      color: var(--light-gray, hsl(0, 0%, 70%));
+      margin: 0;
+      line-height: 1.6;
+    }
+
+    .news-tag {
+      display: inline-block;
+      font-size: 0.65rem;
+      font-weight: 600;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      border-radius: 3px;
+      padding: 2px 7px;
+      margin-right: 6px;
+      vertical-align: middle;
+    }
+
+    .tag-paper   { background: hsla(220,80%,65%,0.15); color: hsl(220,80%,72%); border: 1px solid hsla(220,80%,65%,0.3); }
+    .tag-talk    { background: hsla(280,70%,65%,0.15); color: hsl(280,70%,72%); border: 1px solid hsla(280,70%,65%,0.3); }
+    .tag-service { background: hsla(150,60%,50%,0.15); color: hsl(150,60%,60%); border: 1px solid hsla(150,60%,50%,0.3); }
+    .tag-award   { background: hsla(45,100%,72%,0.12); color: hsl(45,100%,72%); border: 1px solid hsla(45,100%,72%,0.25); }
+
+    /* ── Year group headers for publications ── */
+    .pub-year-group {
+      margin-top: 28px;
+    }
+
+    .pub-year-label {
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--orange-yellow-crayola, hsl(45,100%,72%));
+      border-bottom: 1px solid hsla(45,100%,72%,0.2);
+      padding-bottom: 6px;
+      margin-bottom: 0;
+    }
+  </style>
 </head>
 
 <body>
 
-  <!--
-    - #MAIN
-  -->
-
   <main>
 
-    <!--
-      - #SIDEBAR
-    -->
-
+    <!-- SIDEBAR -->
     <aside class="sidebar" data-sidebar>
 
       <div class="sidebar-info">
 
         <figure class="avatar-box">
-          <img src="./cynthia.jpg" alt="Cynthia Amol" width="80">
+          <img src="./cashot.jpeg" alt="Cynthia Amol" width="80">
         </figure>
 
         <div class="info-content">
-          <h1 class="name" title="Cynthia Amol">Cynthia Amol</h1>
-
-          <p class="title">ML/NLP Researcher</p>
+          <h1 class="name" title="Cynthia Jayne Amol">Cynthia Amol</h1>
+          <p class="title">NLP & Speech Technology Researcher</p>
         </div>
 
         <button class="info_more-btn" data-sidebar-btn>
           <span>Show Contacts</span>
-
           <ion-icon name="chevron-down"></ion-icon>
         </button>
 
@@ -66,60 +249,43 @@
         <ul class="contacts-list">
 
           <li class="contact-item">
-
             <div class="icon-box">
               <ion-icon name="mail-outline"></ion-icon>
             </div>
-
             <div class="contact-info">
               <p class="contact-title">Email</p>
-
-              <a href="cjayneamol028@gmail.com" class="contact-link">cjayneamol028@gmail.com</a>
+              <a href="mailto:cynthia@maseno.ac.ke" class="contact-link">cynthia@maseno.ac.ke</a>
             </div>
-
           </li>
 
           <li class="contact-item">
-
             <div class="icon-box">
-              <ion-icon name="phone-portrait-outline"></ion-icon>
+              <ion-icon name="globe-outline"></ion-icon>
             </div>
-
             <div class="contact-info">
-              <p class="contact-title">Phone</p>
-
-              <a href="tel:+254758291548" class="contact-link">+254 (07) 0459-1763</a>
-              <a href="tel:+254700408205" class="contact-link">+254 (07) 5410-0542</a>
+              <p class="contact-title">ORCID</p>
+              <a href="https://orcid.org/0009-0002-0870-7126" class="contact-link" target="_blank" rel="noopener">0009-0002-0870-7126</a>
             </div>
-
           </li>
 
           <li class="contact-item">
-
-            <div class="icon-box">
-              <ion-icon name="calendar-outline"></ion-icon>
-            </div>
-
-            <div class="contact-info">
-              <p class="contact-title">Brand</p>
-
-            <a href="cjayneamol028@gmail.com" class="contact-link">Girls Tech Table</a>
-            </div>
-
-          </li>
-
-          <li class="contact-item">
-
             <div class="icon-box">
               <ion-icon name="location-outline"></ion-icon>
             </div>
-
             <div class="contact-info">
               <p class="contact-title">Location</p>
-
               <address>Maseno, Kisumu, Kenya</address>
             </div>
+          </li>
 
+          <li class="contact-item">
+            <div class="icon-box">
+              <ion-icon name="school-outline"></ion-icon>
+            </div>
+            <div class="contact-info">
+              <p class="contact-title">Affiliation</p>
+              <span class="contact-link">Maseno University · MCAAI</span>
+            </div>
           </li>
 
         </ul>
@@ -129,20 +295,26 @@
         <ul class="social-list">
 
           <li class="social-item">
-            <a href="#" class="social-link">
-              <ion-icon name="logo-facebook"></ion-icon>
-            </a>
-          </li>
-
-          <li class="social-item">
-            <a href="https://twitter.com/JayneAmol" class="social-link">
+            <a href="https://twitter.com/JayneAmol" class="social-link" target="_blank" rel="noopener" title="Twitter / X">
               <ion-icon name="logo-twitter"></ion-icon>
             </a>
           </li>
 
           <li class="social-item">
-            <a href="#" class="social-link">
-              <ion-icon name="logo-instagram"></ion-icon>
+            <a href="https://www.linkedin.com/in/cynthia-amol/" class="social-link" target="_blank" rel="noopener" title="LinkedIn">
+              <ion-icon name="logo-linkedin"></ion-icon>
+            </a>
+          </li>
+
+          <li class="social-item">
+            <a href="https://github.com/jayneamol" class="social-link" target="_blank" rel="noopener" title="GitHub">
+              <ion-icon name="logo-github"></ion-icon>
+            </a>
+          </li>
+
+          <li class="social-item">
+            <a href="https://scholar.google.com/citations?user=SVeANIQAAAAJ" class="social-link" target="_blank" rel="noopener" title="Google Scholar">
+              <ion-icon name="library-outline"></ion-icon>
             </a>
           </li>
 
@@ -153,1139 +325,725 @@
     </aside>
 
 
-
-
-
-    <!--
-      - #main-content
-    -->
-
+    <!-- MAIN CONTENT -->
     <div class="main-content">
 
-      <!--
-        - #NAVBAR
-      -->
-
+      <!-- NAVBAR -->
       <nav class="navbar">
-
         <ul class="navbar-list">
-
           <li class="navbar-item">
-            <button class="navbar-link  active" data-nav-link>About</button>
+            <button class="navbar-link active" data-nav-link>About</button>
           </li>
-
           <li class="navbar-item">
             <button class="navbar-link" data-nav-link>Resume</button>
           </li>
-
           <li class="navbar-item">
-            <button class="navbar-link" data-nav-link>Portfolio</button>
+            <button class="navbar-link" data-nav-link>News</button>
           </li>
-
           <li class="navbar-item">
-            <button class="navbar-link" data-nav-link>Blog</button>
+            <button class="navbar-link" data-nav-link>Publications</button>
           </li>
-
           <li class="navbar-item">
             <button class="navbar-link" data-nav-link>Contact</button>
           </li>
-
         </ul>
-
       </nav>
 
 
-
-
-
-      <!--
-        - #ABOUT
-      -->
-
-      <article class="about  active" data-page="about">
+      <!-- ABOUT -->
+      <article class="about active" data-page="about">
 
         <header>
-          <h2 class="h2 article-title">Personal Profile</h2>
+          <h2 class="h2 article-title">About Me</h2>
         </header>
 
         <section class="about-text">
-          <p class="timeline-text2" >
-           I am an ML and NLP researcher, currently pursuing a PhD in Computer Science at Maseno University, Kenya. My work focuses on developing ML solutions for low-resource languages, particularly Swahili and other indigenous African languages.
-           As a Research Assistant for the African Next Voices: Pilot Data Collection in Kenya, I lead prompt design and project management, overseeing text and voice data collection. Additionally, I contribute to the Mozilla-funded Alternative Data Licenses project, working on co-creating equitable governance models with African language communities.
-           I hold a Master of Science in Computer Science and a Bachelor of Science in Computer Science, with a strong background in developing technology-driven solutions for real-world challenges. Since completing my undergraduate studies in 2019, my focus has been on leveraging AI and NLP to bridge linguistic gaps and enhance accessibility for underserved communities.
-           Driven by a commitment to community-centered technology, I believe in empowering individuals to contribute to the design of policies and digital solutions that create meaningful impact.
+          <p class="timeline-text2">
+            I am a PhD student in Computer Science at Maseno University, Kenya, and an NLP researcher at the Maseno Centre for Applied Artificial Intelligence (MCAAI). My PhD research focuses on typologically-informed automatic speech recognition (ASR) modelling for structurally rich, low-resource African languages, with Dholuo as my primary case study and Kalenjin and Maasai as generalisation languages.
+          </p>
+          <p class="timeline-text2" style="margin-top:12px;">
+            I hold a Google Africa PhD Fellowship in Natural Language Processing (2025–2028) and a DSA Visiting Researcher Fellowship at Sunbird AI. I am a co-founder and Head of Data at Tonative Africa, and a member of the Caribou Digital Pan-African Women PhD Scholars Collective in AI &amp; Livelihoods. My work spans dataset curation, ASR fine-tuning, misinformation modelling, and community-centred data licensing for African languages.
           </p>
         </section>
 
-        
-        <section class="about-text">
-          <h3 class="h3 service-title">Career Objective</h3>
-          <p class="timeline-text2">
-           Dedicated Machine Learning researcher at Maseno University, Kenya, focusing on low-resource languages.
-           Passionate about developing community-centred technology solutions that create meaningful impact.
-           Keen to apply my expertise in NLP, data analysis and project management to innovative research. 
-           Driven by the belief that technology should serve people and solve real-world community challenges.
-           Always seeking opportunities to contribute to groundbreaking advancements that make a difference.
+        <!-- RESEARCH AREAS -->
+        <section class="service" style="margin-top: 30px;">
 
-
-          </p>
-          </section>
-
-
-        <!--
-          - service
-        -->
-
-        <section class="service">
-
-          <h3 class="h3 service-title">What i'm doing</h3>
+          <h3 class="h3 service-title">Research Areas</h3>
 
           <ul class="service-list">
 
             <li class="service-item">
-
               <div class="service-icon-box">
-                <img src="./icon-design.svg
-                " alt="design icon" width="40">
+                <img src="./icon-dev.svg" alt="ASR icon" width="40">
               </div>
-
               <div class="service-content-box">
-                <h4 class="h4 service-item-title">Web design</h4>
-
+                <h4 class="h4 service-item-title">Automatic Speech Recognition</h4>
                 <p class="service-item-text">
-                  The most modern and high-quality design made at a professional level.
+                  Typologically-informed ASR for morphologically rich Kenyan languages. Current focus: Dholuo, Kalenjin, and Maasai using LoRA fine-tuned self-supervised learning encoders.
                 </p>
+                <span class="service-item-badge">PhD Research</span>
               </div>
-
             </li>
 
             <li class="service-item">
-
               <div class="service-icon-box">
-                <img src="./icon-dev.svg" alt="Web development icon" width="40">
+                <img src="./icon-dev.svg" alt="NLP icon" width="40">
               </div>
-
               <div class="service-content-box">
-                <h4 class="h4 service-item-title">Web development</h4>
-
+                <h4 class="h4 service-item-title">Natural Language Processing</h4>
                 <p class="service-item-text">
-                  High-quality development of sites at the professional level.
+                  Misinformation classification in code-switched Swahili-English. Topic modelling, text classification and language modelling for low-resource African languages.
                 </p>
+                <span class="service-item-badge">MCAAI</span>
               </div>
-
             </li>
 
             <li class="service-item">
-
               <div class="service-icon-box">
-                <img src="./icon-app.svg" alt="mobile app icon" width="40">
+                <img src="./icon-dev.svg" alt="Dataset icon" width="40">
               </div>
-
               <div class="service-content-box">
-                <h4 class="h4 service-item-title">Mobile apps</h4>
-
+                <h4 class="h4 service-item-title">Dataset Curation &amp; Data Governance</h4>
                 <p class="service-item-text">
-                  Professional development of applications for iOS and Android.
+                  Led collection of 3,000+ hours of speech across five Kenyan languages (African Next Voices, Gates Foundation). Co-designed an Afro-centric community data licence under Mozilla Common Voice.
                 </p>
+                <span class="service-item-badge">KenCorpus · Tonative Africa</span>
               </div>
-
             </li>
 
             <li class="service-item">
-
               <div class="service-icon-box">
-                <img src="./icon-photo.svg" alt="camera icon" width="40">
+                <img src="./icon-dev.svg" alt="Policy icon" width="40">
               </div>
-
               <div class="service-content-box">
-                <h4 class="h4 service-item-title">Photography</h4>
-
+                <h4 class="h4 service-item-title">AI Policy &amp; Digital Inclusion</h4>
                 <p class="service-item-text">
-                  I make high-quality photos of any category at a professional level.
+                  Research on leveraging language technologies for inclusive access to digital government services. Community-based focus groups on eGovernance accessibility.
                 </p>
+                <span class="service-item-badge">Caribou Digital</span>
               </div>
-
             </li>
 
           </ul>
 
         </section>
 
+        <!-- AWARDS -->
+        <section style="margin-top: 30px;">
+          <h3 class="h3 service-title">Awards &amp; Fellowships</h3>
 
-        <!--
-          - testimonials
-        -->
-
-        
-
-
-        <!--
-          - testimonials modal
-        -->
-
-        <div class="modal-container" data-modal-container>
-
-          <div class="overlay" data-overlay></div>
-
-          <section class="testimonials-modal">
-
-            <button class="modal-close-btn" data-modal-close-btn>
-              <ion-icon name="close-outline"></ion-icon>
-            </button>
-
-            <div class="modal-img-wrapper">
-              <figure class="modal-avatar-box">
-                <img src="./avatar-1.png" alt="Daniel lewis" width="80" data-modal-img>
-              </figure>
-
-              <img src="./icon-quote.svg" alt="quote icon">
-            </div>
-
-            <div class="modal-content">
-
-              <h4 class="h3 modal-title" data-modal-title>Daniel lewis</h4>
-
-              <time datetime="2021-06-14">28th  November, 2021</time>
-
-              <div data-modal-text>
-                <p>
-                  Richard was hired to create a corporate identity. We were very pleased with the work done. She has a
-                  lot of experience
-                  and is very concerned about the needs of client. Lorem ipsum dolor sit amet, ullamcous cididt
-                  consectetur adipiscing
-                  elit, seds do et eiusmod tempor incididunt ut laborels dolore magnarels alia.
-                </p>
-              </div>
-
-            </div>
-
-          </section>
-
-        </div>
+          <ul class="award-list">
+            <li class="award-item">
+              <span class="award-year">2025</span>
+              <span class="award-text"><strong>Google Africa PhD Fellowship</strong> in Natural Language Processing (2025–2028)</span>
+            </li>
+            <li class="award-item">
+              <span class="award-year">2025</span>
+              <span class="award-text"><strong>DSA Visiting Researcher Fellowship</strong> at Sunbird AI, Data Science Africa (2025–2026)</span>
+            </li>
+            <li class="award-item">
+              <span class="award-year">2025</span>
+              <span class="award-text"><strong>Alele-Williams Masters Award</strong> — Deep Learning Indaba, August 2025</span>
+            </li>
+            <li class="award-item">
+              <span class="award-year">2025</span>
+              <span class="award-text"><strong>Caribou Digital Pan-African Scholars Collective</strong> — Caribou Digital &amp; Mastercard Foundation (May 2025–June 2026)</span>
+            </li>
+            <li class="award-item">
+              <span class="award-year">2024</span>
+              <span class="award-text"><strong>Best Application for AI in Education</strong> — KAPS / Inter-University Hackathon, November 2024</span>
+            </li>
+            <li class="award-item">
+              <span class="award-year">2023–24</span>
+              <span class="award-text"><strong>Top Poster Award</strong> — Deep Learning Indaba 2023 and 2024</span>
+            </li>
+            <li class="award-item">
+              <span class="award-year">2020</span>
+              <span class="award-text"><strong>Partial MSc Scholarship</strong> — Maseno University (Oct 2020–Aug 2024)</span>
+            </li>
+          </ul>
+        </section>
 
       </article>
 
 
-
-
-
-      <!--
-        - #RESUME
-      -->
-
+      <!-- RESUME -->
       <article class="resume" data-page="resume">
 
         <header>
           <h2 class="h2 article-title">Resume</h2>
         </header>
 
+        <!-- EDUCATION -->
         <section class="timeline">
-
           <div class="title-wrapper">
             <div class="icon-box">
               <ion-icon name="book-outline"></ion-icon>
             </div>
-
             <h3 class="h3">Education</h3>
           </div>
 
           <ol class="timeline-list">
-          
-            <li class="timeline-item">
 
+            <li class="timeline-item">
               <h4 class="h4 timeline-item-title">PhD in Computer Science</h4>
-
-              <span>January 2025—To date</span>
-
+              <span>January 2025 — Present</span>
               <p class="timeline-text">
-                Institution: Maseno University, Kenya<br>
-                Faculty: Computing & Informatics<br>
+                Maseno University, Kenya<br>
+                <em>Typologically-informed ASR modelling for structurally rich, low-resource African languages.</em><br>
+                Supervisors: Dr. Lilian D.A. Wanzare &amp; Dr. Vivian Oloo<br>
+                Google Africa PhD Fellowship in NLP (2025–2028)
               </p>
-
-            <li class="timeline-item">
-
-              <h4 class="h4 timeline-item-title">Master of Science in Computer Science</h4>
-
-              <span>September 2021—2024</span>
-
-              <p class="timeline-text">
-                Institution: Maseno University, Kenya<br>
-                Faculty: Computing & Informatics<br>
-              </p>
-
-            </li>
-            <li class="timeline-item">
-
-              <h4 class="h4 timeline-item-title">Bachelor of Science in
-                Computer Science</h4>
-
-              <span>Aug 2015-December 2019</span>
-
-              <p class="timeline-text">
-                Institution: Maseno University, Kenya<br>
-                Faculty: Computing & Informatics<br>
-                Award: First class honours
-              </p>
-
             </li>
 
             <li class="timeline-item">
-
-              <h4 class="h4 timeline-item-title">Kenya Certificate of
-                Secondary Education
-                (K.C.S.E) </h4>
-
-              <span>Jan 2011- Nov 2014</span>
-
+              <h4 class="h4 timeline-item-title">MSc in Computer Science</h4>
+              <span>September 2021 — November 2024</span>
               <p class="timeline-text">
-                Institution: Moi Girls' High School - Eldoret<br>
-                Grade: A Minus (78 points)<br>
-                Subjects Done : <i> -Mathematics    -English    -Kiswahili    -Physics    -Chemistry    -Biology   -Christian Religious Education  -Business Studies</i>
-            
-            
+                Maseno University, Kenya (Awarded: 06/12/2024)<br>
+                <em>Thesis: Modelling Misinformation in Swahili-English Code-switched Texts</em><br>
+                <a href="https://doi.org/10.5815/ijitcs.2025.01.05" target="_blank" rel="noopener" style="color: var(--orange-yellow-crayola);">doi:10.5815/ijitcs.2025.01.05</a>
               </p>
-
             </li>
 
-
-
             <li class="timeline-item">
-
-              <h4 class="h4 timeline-item-title">Kenya Certificate of 
-                Primary Education
-                (K.C.P.E)
-              </h4>
-
-              <span>Jan 2000 - Nov 2010</span>
-
+              <h4 class="h4 timeline-item-title">BSc in Computer Science</h4>
+              <span>August 2015 — December 2019</span>
               <p class="timeline-text">
-                Institution: St. James Academy - Kombewa<br>
-                Grade: 407 Out of 500 Marks<br>
-                Subjects Done : <i> -Mathematics    -English    -Kiswahili    -Science    -Social Studies   -Christian Religious Education</i>
-            
-                
+                Maseno University, Kenya — <strong>First Class Honours</strong>
               </p>
-            
             </li>
 
           </ol>
-
         </section>
 
+        <!-- EXPERIENCE -->
         <section class="timeline">
-
           <div class="title-wrapper">
             <div class="icon-box">
               <ion-icon name="book-outline"></ion-icon>
             </div>
-
             <h3 class="h3">Experience</h3>
           </div>
 
           <ol class="timeline-list">
+
             <li class="timeline-item">
-
-              <h4 class="h4 timeline-item-title">Research Technical Assistant</h4>
-              <i> KenCorpus, Kenya </i></h4>
-              <span>present</span>
-
+              <h4 class="h4 timeline-item-title">AI/NLP Researcher</h4>
+              <span>June 2024 — Present · Maseno Centre for Applied Artificial Intelligence (MCAAI)</span>
               <p class="timeline-text">
-                
-I am currently working as a Technical Assistant for the Africa Next Voices project under KenCorpus, working on data collection and processing, data tools configuration and translation support.
-I apply my skills in Software Development, Data Science and Analytics and Machine Learning in supporting the operations of the project.</p>
-
-            </li>
-            <li class="timeline-item">
-
-              <h4 class="h4 timeline-item-title"> Natural Language Processing (NLP) Research Fellow <br><br>
-                <i>Maseno Centre for Applied Artificial Intelligence (MCAAI)</i></h4>
-
-              <span>Jan 2024 - Present</span>
-
-              <p class="timeline-text" >
-                My tasks at an (NLP) Research Fellow involves:<br>
-                <ol class="timeline-list">
-                  <li class="timeline-text">-Data collection, processing and visualisation.</li>
-                  <li class="timeline-text">-Topic modelling and development of text classification models.</li>
-                  <li class="timeline-text">-Preparation and publication of research manuscripts in conferences and journals.</li>
-                  <li class="timeline-text">-Mentorship of junior researchers, cultivating a culture of learning and innovation. </li>
-                  <li class="timeline-text">-Collaboration with senior researchers to enhance project outcomes.</li>
-                </ol>
-                <br>
+                NLP for low-resource African languages, topic modelling, and lab administration. ASR for morphologically rich Kenyan languages. Curated PolitiKweli dataset and built a transformer-based misinformation classification model. Mentored undergraduate and postgraduate students on research and publication.
               </p>
-
             </li>
 
-           
             <li class="timeline-item">
-
-              <h4 class="h4 timeline-item-title"> Machine Learning (ML) Researcher<br><br><i>Maseno University, Maseno, Kenya</i></h4>
-
-              <span>August 2022 - Present</span>
-
+              <h4 class="h4 timeline-item-title">Co-Founder &amp; Head of Data</h4>
+              <span>March 2025 — Present · Tonative Africa (Remote)</span>
               <p class="timeline-text">
-                As an ML Researcher, I:<br>
-                <ol class="timeline-list">
-                  <li class="timeline-text">-Curate datasets in low resource languages such as Swahili and other native African languages.</li>
-                  <li class="timeline-text">-Design an implement text classification models.</li>
-                  </ol>
+                Administration, project management, and community-led extension of African datasets for context-specific ML tasks. Experimented with textual data across low-resource languages including Amharic, Dholuo, Efik, Ewe, Igbo, Nigerian Pidgin, Kalenjin, Kikuyu, Swahili, and Yoruba.
               </p>
+            </li>
 
+            <li class="timeline-item">
+              <h4 class="h4 timeline-item-title">PhD Scholar</h4>
+              <span>March 2025 — Present · Caribou Digital Pan-African Scholars Collective (Remote)</span>
+              <p class="timeline-text">
+                Policy research on leveraging language technologies and AI-driven insights for inclusive access to digital government services. Designed and led community-based focus groups on accessibility of eGovernance service portals.
+              </p>
+            </li>
+
+            <li class="timeline-item">
+              <h4 class="h4 timeline-item-title">DSA Visiting Researcher Fellow</h4>
+              <span>2025–2026 · Sunbird AI / Data Science Africa</span>
+              <p class="timeline-text">
+                Developing robust, scalable ASR models for Kenyan languages using the African Next Voices dataset (3,000+ hours across Dholuo, Kikuyu, Kalenjin, Maasai, and Somali). Bridging research to production-ready speech technology.
+              </p>
+            </li>
+
+            <li class="timeline-item">
+              <h4 class="h4 timeline-item-title">Technical Researcher</h4>
+              <span>July 2024 — Present · KenCorpus (Remote)</span>
+              <p class="timeline-text">
+                Dataset curation and project management for the <em>African Next Voices: Pilot Data Collection in Kenya</em> and <em>Mozilla Common Voice: Alternative Data Licensing</em> projects. Collected 500,000+ sentences and led a team to collect 3,000 hours of audio across five Kenyan languages. Led development of an Afro-centric community data licence.
+              </p>
+            </li>
+
+            <li class="timeline-item">
+              <h4 class="h4 timeline-item-title">Systems Support Specialist</h4>
+              <span>November 2020 — Present · Maseno University</span>
+              <p class="timeline-text">
+                Microsoft Dynamics 365 ERP design and user support. Microsoft Windows Server 2019 and Microsoft Azure management and technical support.
+              </p>
             </li>
 
           </ol>
-
         </section>
 
-        <section class="testimonials">
+        <!-- APPOINTMENTS & SERVICE -->
+        <section class="timeline">
+          <div class="title-wrapper">
+            <div class="icon-box">
+              <ion-icon name="book-outline"></ion-icon>
+            </div>
+            <h3 class="h3">Appointments &amp; Service</h3>
+          </div>
 
-          <h3 class="h3 testimonials-title">Certificates & Badges</h3>
+          <ol class="timeline-list">
 
-          <ul class="testimonials-list has-scrollbar">
-
-            <li class="testimonials-item">
-              <div class="content-card" data-testimonials-item>
-
-                <figure class="testimonials-avatar-box">
-                  <img src="./awards.svg" alt="Daniel lewis" width="20" data-testimonials-avatar>
-                </figure>
-
-                <h4 class="h4 testimonials-item-title" data-testimonials-title>Cisco</h4>
-
-                <div class="testimonials-text" data-testimonials-text>
-                  <p>
-                    I have been honored to be recognized as a recipient of the Google Data Science Badge.  </p>
-                </div>
-
-              </div>
-            </li>
-<!--
-            <li class="testimonials-item">
-              <div class="content-card" data-testimonials-item>
-
-                <figure class="testimonials-avatar-box">
-                  <img src="./awards.svg" alt="Jessica miller" width="20" data-testimonials-avatar>
-                </figure>
-
-                <h4 class="h4 testimonials-item-title" data-testimonials-title>Stackoverflow</h4>
-
-                <div class="testimonials-text" data-testimonials-text>
-                  <p>
-                    Am honoured to have been awarded Stackoverflow Teacher's Badge
-                    <a class="chatlinks" href="https://stackoverflow.com/users/20425784/ezekiel-maina">View Profile</a>
-                
-                  </p>
-              
-                </div>
-
-              </div>
-            </li>
--->
-            <li class="testimonials-item">
-              <div class="content-card" data-testimonials-item>
-
-                <figure class="testimonials-avatar-box">
-                  <img src="./awards.svg" alt="Emily evans" width="20" data-testimonials-avatar>
-                </figure>
-
-                <h4 class="h4 testimonials-item-title" data-testimonials-title>Cisco</h4>
-
-                <div class="testimonials-text" data-testimonials-text>
-                  <p>
-                    Greatful for Cisco Certified Networking Academy (CCNA) 1-3  </p>
-                </div>
-
-              </div>
+            <li class="timeline-item">
+              <h4 class="h4 timeline-item-title">Awards Committee Member</h4>
+              <span>Deep Learning Indaba 2026</span>
             </li>
 
-            
+            <li class="timeline-item">
+              <h4 class="h4 timeline-item-title">Co-Publicity Chair, AbjadNLP Workshop</h4>
+              <span>COLING 2025 · EACL 2026</span>
+              <p class="timeline-text">Low-resource NLP workshop co-located with major computational linguistics venues.</p>
+            </li>
 
-          </ul>
+            <li class="timeline-item">
+              <h4 class="h4 timeline-item-title">Local Organising Committee Lead</h4>
+              <span>Deep Learning IndabaX Kenya 2025</span>
+            </li>
 
+            <li class="timeline-item">
+              <h4 class="h4 timeline-item-title">KenyaNLP Working Group Member</h4>
+              <span>Ongoing</span>
+              <p class="timeline-text">Contributing to NLP research coordination for Kenyan languages.</p>
+            </li>
+
+            <li class="timeline-item">
+              <h4 class="h4 timeline-item-title">NeurIPS Peer Reviewer</h4>
+              <span>2025–2026</span>
+            </li>
+
+          </ol>
         </section>
 
+        <!-- SKILLS -->
         <section class="skill">
-
-          <h3 class="h3 skills-title">Development skills & Tools</h3>
+          <h3 class="h3 skills-title">Technical Skills &amp; Languages</h3>
 
           <ul class="skills-list content-card">
 
             <li class="skills-item">
-
               <div class="title-wrapper">
-                <h5 class="h5">Data Science :</h5>
-                <data value="70"><i>Python</i></data>
+                <h5 class="h5">Programming</h5>
+                <data value="95"><i>Python, C/C++, Java, JavaScript</i></data>
               </div>
-
               <div class="skill-progress-bg">
-                <div class="skill-progress-fill" style="width: 100%;"></div>
+                <div class="skill-progress-fill" style="width: 95%;"></div>
               </div>
-
             </li>
 
-           
             <li class="skills-item">
-
               <div class="title-wrapper">
-                <h5 class="h5">Machine Learning :</h5>
-                <data value="50"><i> Python, Matlab</i></data>
+                <h5 class="h5">NLP &amp; Speech Processing</h5>
+                <data value="90"><i>PyTorch, TensorFlow, HuggingFace, Kaldi, Whisper</i></data>
               </div>
-
-              <div class="skill-progress-bg">
-                <div class="skill-progress-fill" style="width: 100%;"></div>
-              </div>
-
-            </li>
-            <li class="skills-item">
-
-              <div class="title-wrapper">
-                <h5 class="h5">Natural Language Processing :</h5>
-                <data value="50"><i> Python
-                </i></data>
-              </div>
-
               <div class="skill-progress-bg">
                 <div class="skill-progress-fill" style="width: 90%;"></div>
               </div>
-
-            </li>
-            <li class="skills-item">
-
-              <div class="title-wrapper">
-                <h5 class="h5">Web Development : </h5>
-                <data value="80"><i> Flutter, HTML, CSS, Javascript , php, ajax</i></data>
-              </div>
-
-              <div class="skill-progress-bg">
-                <div class="skill-progress-fill" style="width: 100%;"></div>
-              </div>
-
             </li>
 
             <li class="skills-item">
-
               <div class="title-wrapper">
-                <h5 class="h5">Mobile Development :</h5>
-                <data value="70"><i>Flutter, Dart, Node.js. firebase</i></data>
+                <h5 class="h5">Machine Learning</h5>
+                <data value="90"><i>Transformer fine-tuning (LoRA), SSL encoders, text classification</i></data>
               </div>
-
               <div class="skill-progress-bg">
                 <div class="skill-progress-fill" style="width: 90%;"></div>
               </div>
-
             </li>
+
             <li class="skills-item">
-
               <div class="title-wrapper">
-                <h5 class="h5">Pattern Recognition :</h5>
-                <data value="50"><i> Matlab</i></data>
+                <h5 class="h5">Data Science</h5>
+                <data value="85"><i>Dataset curation, annotation pipelines, corpus design</i></data>
               </div>
-
               <div class="skill-progress-bg">
-                <div class="skill-progress-fill" style="width: 70%;"></div>
+                <div class="skill-progress-fill" style="width: 85%;"></div>
               </div>
-
             </li>
+
             <li class="skills-item">
-
               <div class="title-wrapper">
-                <h5 class="h5"> Expert System :</h5>
-                <data value="70"><i>SWI-Prolog</i></data>
+                <h5 class="h5">Research &amp; Writing</h5>
+                <data value="90"><i>LaTeX, systematic literature review, academic publication</i></data>
               </div>
-
-              <div class="skill-progress-bg">
-                <div class="skill-progress-fill" style="width: 70%;"></div>
-              </div>
-
-            </li>
-            <li class="skills-item">
-
-              <div class="title-wrapper">
-                <h5 class="h5">API :</h5>
-                <data value="90"><i> Rest-Json</i></data>
-              </div>
-
               <div class="skill-progress-bg">
                 <div class="skill-progress-fill" style="width: 90%;"></div>
               </div>
-
             </li>
 
-            
             <li class="skills-item">
-
               <div class="title-wrapper">
-                <h5 class="h5">Database
-                  Administration
-                   :</h5>
-                <data value="50"><i>  MySQL</i></data>
+                <h5 class="h5">Systems Administration</h5>
+                <data value="80"><i>Microsoft Dynamics 365, Azure, Windows Server 2019</i></data>
               </div>
-
               <div class="skill-progress-bg">
-                <div class="skill-progress-fill" style="width: 100%;"></div>
+                <div class="skill-progress-fill" style="width: 80%;"></div>
               </div>
-
-            </li>
-            <li class="skills-item">
-
-              <div class="title-wrapper">
-                <h5 class="h5">Coding :</h5>
-                <data value="50"><i> C, Java, Python, dart
-                </i></data>
-              </div>
-
-              <div class="skill-progress-bg">
-                <div class="skill-progress-fill" style="width: 90%;"></div>
-              </div>
-
-            </li>
-          </ul>
-
-        </section>
-
-      </article>
-
-
-
-
-
-      <!--
-        - #PORTFOLIO
-      -->
-  
-      <article class="portfolio" data-page="portfolio">
-
-        <header>
-          <h2 class="h2 article-title">Portfolio</h2>
-        </header>
-
-        <section class="projects">
-
-          <ul class="filter-list">
-
-            <li class="filter-item">
-              <button class="active" data-filter-btn>All</button>
-            </li>
-
-            <li class="filter-item">
-              <button data-filter-btn>Web design</button>
-            </li>
-
-            <li class="filter-item">
-              <button data-filter-btn>Applications</button>
-            </li>
-
-            <li class="filter-item">
-              <button data-filter-btn>Web development</button>
             </li>
 
           </ul>
 
-          <div class="filter-select-box">
-
-            <button class="filter-select" data-select>
-
-              <div class="select-value" data-selecct-value>Select category</div>
-
-              <div class="select-icon">
-                <ion-icon name="chevron-down"></ion-icon>
-              </div>
-
-            </button>
-
-            <ul class="select-list">
-
-              <li class="select-item">
-                <button data-select-item>All</button>
-              </li>
-
-              <li class="select-item">
-                <button data-select-item>Web design</button>
-              </li>
-
-              <li class="select-item">
-                <button data-select-item>Applications</button>
-              </li>
-
-              <li class="select-item">
-                <button data-select-item>Web development</button>
-              </li>
-
-            </ul>
-
+          <div style="margin-top: 20px;">
+            <h5 class="h5" style="margin-bottom: 10px;">Languages</h5>
+            <div class="lang-pills">
+              <span class="lang-pill">Dholuo — Native</span>
+              <span class="lang-pill">English — Fluent</span>
+              <span class="lang-pill">Kiswahili — Fluent</span>
+              <span class="lang-pill">French — Beginner</span>
+            </div>
           </div>
 
-          <ul class="project-list">
-
-            <li class="project-item  active" data-filter-item data-category="web development">
-              <a href="#">
-
-                <figure class="project-img">
-                  <div class="project-item-icon-box">
-                    <ion-icon name="eye-outline"></ion-icon>
-                  </div>
-
-                  <img src="./project-1.jpg" alt="finance" loading="lazy">
-                </figure>
-
-                <h3 class="project-title">Finance</h3>
-
-                <p class="project-category">Web development</p>
-
-              </a>
-            </li>
-
-            <li class="project-item  active" data-filter-item data-category="web development">
-              <a href="#">
-
-                <figure class="project-img">
-                  <div class="project-item-icon-box">
-                    <ion-icon name="eye-outline"></ion-icon>
-                  </div>
-
-                  <img src="./project-2.png" alt="orizon" loading="lazy">
-                </figure>
-
-                <h3 class="project-title">Orizon</h3>
-
-                <p class="project-category">Web development</p>
-
-              </a>
-            </li>
-
-            <li class="project-item  active" data-filter-item data-category="web design">
-              <a href="#">
-
-                <figure class="project-img">
-                  <div class="project-item-icon-box">
-                    <ion-icon name="eye-outline"></ion-icon>
-                  </div>
-
-                  <img src="./project-3.jpg" alt="fundo" loading="lazy">
-                </figure>
-
-                <h3 class="project-title">Fundo</h3>
-
-                <p class="project-category">Web design</p>
-
-              </a>
-            </li>
-
-            <li class="project-item  active" data-filter-item data-category="applications">
-              <a href="#">
-
-                <figure class="project-img">
-                  <div class="project-item-icon-box">
-                    <ion-icon name="eye-outline"></ion-icon>
-                  </div>
-
-                  <img src="./project-4.png" alt="brawlhalla" loading="lazy">
-                </figure>
-
-                <h3 class="project-title">Brawlhalla</h3>
-
-                <p class="project-category">Applications</p>
-
-              </a>
-            </li>
-
-            <li class="project-item  active" data-filter-item data-category="web design">
-              <a href="#">
-
-                <figure class="project-img">
-                  <div class="project-item-icon-box">
-                    <ion-icon name="eye-outline"></ion-icon>
-                  </div>
-
-                  <img src="./project-5.png" alt="dsm." loading="lazy">
-                </figure>
-
-                <h3 class="project-title">DSM.</h3>
-
-                <p class="project-category">Web design</p>
-
-              </a>
-            </li>
-
-            <li class="project-item  active" data-filter-item data-category="web design">
-              <a href="#">
-
-                <figure class="project-img">
-                  <div class="project-item-icon-box">
-                    <ion-icon name="eye-outline"></ion-icon>
-                  </div>
-
-                  <img src="./project-6.png" alt="metaspark" loading="lazy">
-                </figure>
-
-                <h3 class="project-title">MetaSpark</h3>
-
-                <p class="project-category">Web design</p>
-
-              </a>
-            </li>
-
-            <li class="project-item  active" data-filter-item data-category="web development">
-              <a href="#">
-
-                <figure class="project-img">
-                  <div class="project-item-icon-box">
-                    <ion-icon name="eye-outline"></ion-icon>
-                  </div>
-
-                  <img src="./project-7.png" alt="summary" loading="lazy">
-                </figure>
-
-                <h3 class="project-title">Summary</h3>
-
-                <p class="project-category">Web development</p>
-
-              </a>
-            </li>
-
-            <li class="project-item  active" data-filter-item data-category="applications">
-              <a href="#">
-
-                <figure class="project-img">
-                  <div class="project-item-icon-box">
-                    <ion-icon name="eye-outline"></ion-icon>
-                  </div>
-
-                  <img src="./project-8.jpg" alt="task manager" loading="lazy">
-                </figure>
-
-                <h3 class="project-title">Task Manager</h3>
-
-                <p class="project-category">Applications</p>
-
-              </a>
-            </li>
-
-            <li class="project-item  active" data-filter-item data-category="web development">
-              <a href="#">
-
-                <figure class="project-img">
-                  <div class="project-item-icon-box">
-                    <ion-icon name="eye-outline"></ion-icon>
-                  </div>
-
-                  <img src="./project-9.png" alt="arrival" loading="lazy">
-                </figure>
-
-                <h3 class="project-title">Arrival</h3>
-
-                <p class="project-category">Web development</p>
-
-              </a>
-            </li>
-
-          </ul>
-
         </section>
 
       </article>
 
- -->
 
-
-
-      <!--
-        - #BLOG
-      -->
-
-      <article class="blog" data-page="blog">
+      <!-- NEWS & EVENTS -->
+      <article class="portfolio" data-page="news">
 
         <header>
-          <h2 class="h2 article-title">Blog</h2>
+          <h2 class="h2 article-title">News &amp; Events</h2>
         </header>
 
-        <section class="blog-posts">
+        <ul class="news-list">
 
-          <ul class="blog-posts-list">
+          <li class="news-item">
+            <span class="news-date">Jul 2026</span>
+            <div class="news-body">
+              <p class="news-title">
+                <span class="news-tag tag-talk">Attending</span>
+                AAIAC 2026 — 2nd International Conference on the Advancements of AI in the African Context
+              </p>
+              <p class="news-desc">
+                Dar es Salaam, Tanzania · 22–23 July 2026. Conference theme: <em>Artificial Intelligence for Inclusive and Sustainable Digital Economy in Africa.</em>
+              </p>
+            </div>
+          </li>
 
-            <li class="blog-post-item">
-              <a href="#">
+          <li class="news-item">
+            <span class="news-date">2026</span>
+            <div class="news-body">
+              <p class="news-title">
+                <span class="news-tag tag-service">Service</span>
+                Awards Committee Member — Deep Learning Indaba 2026
+              </p>
+              <p class="news-desc">
+                Serving on the awards committee for the 2026 edition of Deep Learning Indaba, Africa's largest gathering for ML and AI research.
+              </p>
+            </div>
+          </li>
 
-                <figure class="blog-banner-box">
-                  <img src="./blog-1.jpg" alt="Design conferences in 2022" loading="lazy">
-                </figure>
+          <li class="news-item">
+            <span class="news-date">May 2026</span>
+            <div class="news-body">
+              <p class="news-title">
+                <span class="news-tag tag-paper">Paper</span>
+                Presented AfriVoices-KE at LREC-SIGUL 2026
+              </p>
+              <p class="news-desc">
+                Palma de Mallorca, Spain · 11–16 May 2026. Presented <em>AfriVoices-KE: A Multilingual Speech Dataset for Kenyan Languages</em> at the SIGUL 2026 Joint Workshop co-located with LREC 2026. <a href="https://arxiv.org/abs/2604.08448" target="_blank" rel="noopener" style="color:var(--orange-yellow-crayola);">arXiv:2604.08448 ↗</a>
+              </p>
+            </div>
+          </li>
 
-                <div class="blog-content">
+          <li class="news-item">
+            <span class="news-date">Apr 2026</span>
+            <div class="news-body">
+              <p class="news-title">
+                <span class="news-tag tag-paper">Paper</span>
+                CHI EA 2026 — AI Across Cultures Workshop
+              </p>
+              <p class="news-desc">
+                Co-authored <em>AI Across Cultures: Co-Designing Equitable and Culturally Grounded Futures</em>, presented at the ACM CHI 2026 Extended Abstracts.
+              </p>
+            </div>
+          </li>
 
-                  <div class="blog-meta">
-                    <p class="blog-category">Design</p>
+          <li class="news-item">
+            <span class="news-date">Jan 2026</span>
+            <div class="news-body">
+              <p class="news-title">
+                <span class="news-tag tag-service">Service</span>
+                AbjadNLP Workshop Co-Publicity Chair at EACL 2026
+              </p>
+              <p class="news-desc">
+                Continued co-chairing publicity for the AbjadNLP low-resource NLP workshop, co-located with EACL 2026.
+              </p>
+            </div>
+          </li>
 
-                    <span class="dot"></span>
+          <li class="news-item">
+            <span class="news-date">Aug 2025</span>
+            <div class="news-body">
+              <p class="news-title">
+                <span class="news-tag tag-award">Award</span>
+                Alele-Williams Masters Award — Deep Learning Indaba 2025
+              </p>
+              <p class="news-desc">
+                Received the Alele-Williams Masters Award at Deep Learning Indaba 2025, recognising outstanding MSc-level research in African ML.
+              </p>
+            </div>
+          </li>
 
-                    <time datetime="2022-02-23">Fab 23, 2022</time>
-                  </div>
+          <li class="news-item">
+            <span class="news-date">2025</span>
+            <div class="news-body">
+              <p class="news-title">
+                <span class="news-tag tag-award">Fellowship</span>
+                Google Africa PhD Fellowship in NLP (2025–2028)
+              </p>
+              <p class="news-desc">
+                Awarded the Google Africa PhD Fellowship in Natural Language Processing to support PhD research on typologically-informed ASR for low-resource Kenyan languages.
+              </p>
+            </div>
+          </li>
 
-                  <h3 class="h3 blog-item-title">Design conferences in 2022</h3>
+          <li class="news-item">
+            <span class="news-date">2025</span>
+            <div class="news-body">
+              <p class="news-title">
+                <span class="news-tag tag-award">Fellowship</span>
+                DSA Visiting Researcher Fellowship at Sunbird AI
+              </p>
+              <p class="news-desc">
+                Awarded a Data Science Africa Visiting Fellowship hosted at Sunbird AI (Uganda), focused on building production-ready ASR models for Kenyan languages using the AfriVoices-KE dataset.
+              </p>
+            </div>
+          </li>
 
-                  <p class="blog-text">
-                    Veritatis et quasi architecto beatae vitae dicta sunt, explicabo.
-                  </p>
+          <li class="news-item">
+            <span class="news-date">Jan 2025</span>
+            <div class="news-body">
+              <p class="news-title">
+                <span class="news-tag tag-service">Service</span>
+                AbjadNLP Workshop Co-Publicity Chair at COLING 2025
+              </p>
+              <p class="news-desc">
+                Co-chaired publicity for the AbjadNLP Workshop on low-resource NLP, co-located with COLING 2025.
+              </p>
+            </div>
+          </li>
 
-                </div>
+          <li class="news-item">
+            <span class="news-date">Nov 2024</span>
+            <div class="news-body">
+              <p class="news-title">
+                <span class="news-tag tag-award">Award</span>
+                Best Application for AI in Education — KAPS Hackathon
+              </p>
+              <p class="news-desc">
+                Won Best Application for AI in Education at the KAPS / Inter-University Hackathon, November 2024.
+              </p>
+            </div>
+          </li>
 
-              </a>
-            </li>
+          <li class="news-item">
+            <span class="news-date">Sept 2024</span>
+            <div class="news-body">
+              <p class="news-title">
+                <span class="news-tag tag-award">Award</span>
+                Top Poster Award — Deep Learning Indaba 2024
+              </p>
+              <p class="news-desc">Recognised with a Top Poster Award at Deep Learning Indaba 2024.</p>
+            </div>
+          </li>
 
-            <li class="blog-post-item">
-              <a href="#">
+          <li class="news-item">
+            <span class="news-date">Sept 2023</span>
+            <div class="news-body">
+              <p class="news-title">
+                <span class="news-tag tag-award">Award</span>
+                Top Poster Award — Deep Learning Indaba 2023
+              </p>
+              <p class="news-desc">Recognised with a Top Poster Award at Deep Learning Indaba 2023 — first time attending a major international ML conference.</p>
+            </div>
+          </li>
 
-                <figure class="blog-banner-box">
-                  <img src="./blog-2.jpg" alt="Best fonts every designer" loading="lazy">
-                </figure>
-
-                <div class="blog-content">
-
-                  <div class="blog-meta">
-                    <p class="blog-category">Design</p>
-
-                    <span class="dot"></span>
-
-                    <time datetime="2022-02-23">Fab 23, 2022</time>
-                  </div>
-
-                  <h3 class="h3 blog-item-title">Best fonts every designer</h3>
-
-                  <p class="blog-text">
-                    Sed ut perspiciatis, nam libero tempore, cum soluta nobis est eligendi.
-                  </p>
-
-                </div>
-
-              </a>
-            </li>
-
-            <li class="blog-post-item">
-              <a href="#">
-
-                <figure class="blog-banner-box">
-                  <img src="./blog-3.jpg" alt="Design digest #80" loading="lazy">
-                </figure>
-
-                <div class="blog-content">
-
-                  <div class="blog-meta">
-                    <p class="blog-category">Design</p>
-
-                    <span class="dot"></span>
-
-                    <time datetime="2022-02-23">Fab 23, 2022</time>
-                  </div>
-
-                  <h3 class="h3 blog-item-title">Design digest #80</h3>
-
-                  <p class="blog-text">
-                    Excepteur sint occaecat cupidatat no proident, quis nostrum exercitationem ullam corporis suscipit.
-                  </p>
-
-                </div>
-
-              </a>
-            </li>
-
-            <li class="blog-post-item">
-              <a href="#">
-
-                <figure class="blog-banner-box">
-                  <img src="./blog-4.jpg" alt="UI interactions of the week" loading="lazy">
-                </figure>
-
-                <div class="blog-content">
-
-                  <div class="blog-meta">
-                    <p class="blog-category">Design</p>
-
-                    <span class="dot"></span>
-
-                    <time datetime="2022-02-23">Fab 23, 2022</time>
-                  </div>
-
-                  <h3 class="h3 blog-item-title">UI interactions of the week</h3>
-
-                  <p class="blog-text">
-                    Enim ad minim veniam, consectetur adipiscing elit, quis nostrud exercitation ullamco laboris nisi.
-                  </p>
-
-                </div>
-
-              </a>
-            </li>
-
-            <li class="blog-post-item">
-              <a href="#">
-
-                <figure class="blog-banner-box">
-                  <img src="./blog-5.jpg" alt="The forgotten art of spacing" loading="lazy">
-                </figure>
-
-                <div class="blog-content">
-
-                  <div class="blog-meta">
-                    <p class="blog-category">Design</p>
-
-                    <span class="dot"></span>
-
-                    <time datetime="2022-02-23">Fab 23, 2022</time>
-                  </div>
-
-                  <h3 class="h3 blog-item-title">The forgotten art of spacing</h3>
-
-                  <p class="blog-text">
-                    Maxime placeat, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                  </p>
-
-                </div>
-
-              </a>
-            </li>
-
-            <li class="blog-post-item">
-              <a href="#">
-
-                <figure class="blog-banner-box">
-                  <img src="./blog-6.jpg" alt="Design digest #79" loading="lazy">
-                </figure>
-
-                <div class="blog-content">
-
-                  <div class="blog-meta">
-                    <p class="blog-category">Design</p>
-
-                    <span class="dot"></span>
-
-                    <time datetime="2022-02-23">Fab 23, 2022</time>
-                  </div>
-
-                  <h3 class="h3 blog-item-title">Design digest #79</h3>
-
-                  <p class="blog-text">
-                    Optio cumque nihil impedit uo minus quod maxime placeat, velit esse cillum.
-                  </p>
-
-                </div>
-
-              </a>
-            </li>
-
-          </ul>
-
-        </section>
+        </ul>
 
       </article>
 
 
 
- 
+      <article class="portfolio" data-page="publications">
 
-      <!--
-        - #CONTACT
-      -->
- 
+        <header>
+          <h2 class="h2 article-title">Publications</h2>
+        </header>
+
+        <p class="section-sub">
+          See also: <a href="https://scholar.google.com/citations?user=SVeANIQAAAAJ" target="_blank" rel="noopener" style="color: var(--orange-yellow-crayola);">Google Scholar</a> · <a href="https://orcid.org/0009-0002-0870-7126" target="_blank" rel="noopener" style="color: var(--orange-yellow-crayola);">ORCID</a>
+        </p>
+
+        <!-- 2026 -->
+        <div class="pub-year-group">
+          <p class="pub-year-label">2026</p>
+          <ul class="pub-list">
+
+            <li class="pub-item">
+              <p class="pub-title">AfriVoices-KE: A Multilingual Speech Dataset for Kenyan Languages</p>
+              <p class="pub-meta">
+                Wanzare, L., <strong>Amol, C. J.</strong>, Maina, E., Odhiambo, N., et al.<br>
+                <span class="pub-venue">LREC-SIGUL 2026 Joint Workshop · arXiv:2604.08448</span>
+              </p>
+              <a href="https://arxiv.org/abs/2604.08448" class="pub-doi" target="_blank" rel="noopener">arxiv.org/abs/2604.08448 ↗</a>
+            </li>
+
+            <li class="pub-item">
+              <p class="pub-title">AI Across Cultures: Co-Designing Equitable and Culturally Grounded Futures</p>
+              <p class="pub-meta">
+                Kondoro, A. M., Farao, J., <strong>Amol, C. J.</strong>, Mubiru, K. S., et al.<br>
+                <span class="pub-venue">CHI EA 2026 — Extended Abstracts of the ACM CHI Conference on Human Factors in Computing Systems</span>
+              </p>
+            </li>
+
+          </ul>
+        </div>
+
+        <!-- 2025 -->
+        <div class="pub-year-group">
+          <p class="pub-year-label">2025</p>
+          <ul class="pub-list">
+
+            <li class="pub-item">
+              <p class="pub-title">Modelling Misinformation in Swahili-English Code-switched Texts</p>
+              <p class="pub-meta">
+                <strong>Amol, C. J.</strong>, Wanzare, L., &amp; Obuhuma, J.<br>
+                <span class="pub-venue">International Journal of Information Technology and Computer Science (IJITCS)</span>
+              </p>
+              <a href="https://doi.org/10.5815/ijitcs.2025.01.05" class="pub-doi" target="_blank" rel="noopener">doi:10.5815/ijitcs.2025.01.05 ↗</a>
+            </li>
+
+            <li class="pub-item">
+              <p class="pub-title">Proceedings of the AbjadNLP Workshop</p>
+              <p class="pub-meta">
+                El-Haj, M., Haddad, A., <strong>Amol, C. J.</strong>, Ahmadi, S., Paterson III, H., Ezeani, I., &amp; Rayson, P.<br>
+                <span class="pub-venue">The 31st International Conference on Computational Linguistics (COLING 2025)</span>
+              </p>
+            </li>
+
+          </ul>
+        </div>
+
+        <!-- 2024 -->
+        <div class="pub-year-group">
+          <p class="pub-year-label">2024</p>
+          <ul class="pub-list">
+
+            <li class="pub-item">
+              <p class="pub-title">State of NLP in Kenya: A Survey</p>
+              <p class="pub-meta">
+                <strong>Amol, C. J.</strong>, Chimoto, E. A., Gesicho, R. D., Gitau, A. M., Etori, N. A., Wanzare, L. D. A., et al.<br>
+                <span class="pub-venue">arXiv preprint · arXiv:2410.09948</span>
+              </p>
+              <a href="https://arxiv.org/abs/2410.09948" class="pub-doi" target="_blank" rel="noopener">arxiv.org/abs/2410.09948 ↗</a>
+            </li>
+
+          </ul>
+        </div>
+
+        <!-- 2023 -->
+        <div class="pub-year-group">
+          <p class="pub-year-label">2023</p>
+          <ul class="pub-list">
+
+            <li class="pub-item">
+              <p class="pub-title">PolitiKweli: A Swahili-English Code-switched Twitter Political Misinformation Classification Dataset</p>
+              <p class="pub-meta">
+                <strong>Amol, C. J.</strong>, Wanzare, L., &amp; Obuhuma, J.<br>
+                <span class="pub-venue">SPELLL 2023 · Speech and Language Technologies for Low-resource Languages, pp. 3–17, Springer</span>
+              </p>
+            </li>
+
+          </ul>
+        </div>
+
+        <!-- In Progress -->
+        <div class="pub-year-group">
+          <p class="pub-year-label">In Progress</p>
+          <ul class="pub-list">
+
+            <li class="pub-item">
+              <p class="pub-title">The Digital Revolution: Leveraging Language Technologies for Inclusive Access to Digital Government Services for the Youth</p>
+              <p class="pub-meta"><strong>Amol, C. J.</strong></p>
+            </li>
+
+          </ul>
+        </div>
+
+      </article>
+
+
+      <!-- CONTACT -->
       <article class="contact" data-page="contact">
 
-     
+        <header>
+          <h2 class="h2 article-title">Contact</h2>
+        </header>
 
         <section class="service">
-
-          <h3 class="h3 service-title">Reach Me Out</h3>
+          <h3 class="h3 service-title">Get in Touch</h3>
 
           <ul class="service-list">
 
             <li class="service-item">
-
               <div class="service-icon-box">
-                <img src="./watsp.svg
-                " alt="design icon" width="40">
+                <img src="./icon-dev.svg" alt="email icon" width="40">
               </div>
-
               <div class="service-content-box">
-                <h4 class="h4 service-item-title">Chat On Whatsapp</h4>
-
+                <h4 class="h4 service-item-title">Email</h4>
                 <p class="service-item-text">
-                 <!-- <a class="chatlinks" href="https://wa.me/254758291548?text=Hi,%20Got%20this%20from%20your%20portfolio">click to initiate chat</a>
-                -->
+                  <a href="mailto:cynthia@maseno.ac.ke" style="color: var(--orange-yellow-crayola);">cynthia@maseno.ac.ke</a>
                 </p>
               </div>
-
             </li>
 
             <li class="service-item">
-
               <div class="service-icon-box">
-                <img src="./icon-dev.svg" alt="Web development icon" width="40">
+                <img src="./icon-dev.svg" alt="linkedin icon" width="40">
               </div>
-
               <div class="service-content-box">
-                <h4 class="h4 service-item-title">Web development</h4>
-
+                <h4 class="h4 service-item-title">LinkedIn</h4>
                 <p class="service-item-text">
-                  High-quality development of sites at the professional level.
+                  <a href="https://www.linkedin.com/in/cynthia-amol/" target="_blank" rel="noopener" style="color: var(--orange-yellow-crayola);">linkedin.com/in/cynthia-amol</a>
                 </p>
               </div>
-
             </li>
 
             <li class="service-item">
-
               <div class="service-icon-box">
-                <img src="./icon-app.svg" alt="mobile app icon" width="40">
+                <img src="./icon-dev.svg" alt="scholar icon" width="40">
               </div>
-
               <div class="service-content-box">
-                <h4 class="h4 service-item-title">Mobile apps</h4>
-
+                <h4 class="h4 service-item-title">Google Scholar</h4>
                 <p class="service-item-text">
-                  Professional development of applications for iOS and Android.
+                  <a href="https://scholar.google.com/citations?user=SVeANIQAAAAJ" target="_blank" rel="noopener" style="color: var(--orange-yellow-crayola);">Cynthia Jayne Amol</a>
                 </p>
               </div>
-
-            </li>
-
-            <li class="service-item">
-
-              <div class="service-icon-box">
-                <img src="./icon-photo.svg" alt="camera icon" width="40">
-              </div>
-
-              <div class="service-content-box">
-                <h4 class="h4 service-item-title">Photography</h4>
-
-                <p class="service-item-text">
-                  I make high-quality photos of any category at a professional level.
-                </p>
-              </div>
-
             </li>
 
           </ul>
-
         </section>
 
-        <section class="contact-form"  >
-
-          <h3 class="h3 form-title">Contact Form</h3>
-
+        <section class="contact-form">
+          <h3 class="h3 form-title">Send a Message</h3>
           <form action="#" class="form" data-form>
-
             <div class="input-wrapper">
               <input type="text" name="fullname" class="form-input" placeholder="Full name" required data-form-input>
-
               <input type="email" name="email" class="form-input" placeholder="Email address" required data-form-input>
             </div>
-
-            <textarea name="message" class="form-input" placeholder="Your Message" required data-form-input></textarea>
-
+            <textarea name="message" class="form-input" placeholder="Your message" required data-form-input></textarea>
             <button class="form-btn" type="submit" disabled data-form-btn>
               <ion-icon name="paper-plane"></ion-icon>
               <span>Send Message</span>
             </button>
-
           </form>
-
         </section>
 
       </article>
@@ -1294,21 +1052,44 @@ I apply my skills in Software Development, Data Science and Analytics and Machin
 
   </main>
 
-
-
-
-
-
-  <!--
-    - custom js link
-  -->
   <script src="./script.js"></script>
-
-  <!--
-    - ionicon link
-  -->
   <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
   <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+  <script>
+    // Fix navbar to handle "publications" tab alongside original tabs
+    document.addEventListener('DOMContentLoaded', function () {
+      const navLinks = document.querySelectorAll('[data-nav-link]');
+      const pages = document.querySelectorAll('[data-page]');
+
+      const pageMap = {
+        'about': 'about',
+        'resume': 'resume',
+        'news': 'news',
+        'publications': 'publications',
+        'contact': 'contact'
+      };
+
+      navLinks.forEach(function (link) {
+        link.addEventListener('click', function () {
+          const label = link.textContent.trim().toLowerCase();
+          const target = pageMap[label];
+
+          navLinks.forEach(l => l.classList.remove('active'));
+          link.classList.add('active');
+
+          pages.forEach(function (page) {
+            const pageName = page.dataset.page;
+            if (pageName === target) {
+              page.classList.add('active');
+            } else {
+              page.classList.remove('active');
+            }
+          });
+        });
+      });
+    });
+  </script>
 
 </body>
 
